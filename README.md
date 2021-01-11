@@ -1,4 +1,4 @@
-# reservation-system-python
+# Reservation System in Python with Flask freamwork 
 
 1. Creating and activate Virtual Environment in Python 3:
 
