@@ -7,3 +7,7 @@
     `$ venv\Scripts\activate` - Windows
 
     `$ source venv/bin/activate` - MacOS/Linux
+
+2. Installing dependencies
+
+    `$ pip install -r requirements.txt`
