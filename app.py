@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from config import config
+
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
@@ -7,7 +9,7 @@ bootstrap = Bootstrap(app)
 @app.route('/')
 def index():
     return render_template('index.html')
- 
+
 
 @app.route('/settings')
 def settings():
