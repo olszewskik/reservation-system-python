@@ -1,5 +1,7 @@
-{% extends 'bootstrap/base.html' %}
-{% block title %}Reservation System{% endblock  %}
-{% block content %}
+{% extends 'bootstrap/base.html' %} {% block title %}ReservationSystem{%endblock
+%} {% block content %}
 <h1>Reservation System</h1>
-{% endblock  %}
+<ul>
+  {% for route in routes_list %}{{ route }}{% endfor %}
+</ul>
+{% endblock %}

@@ -14,7 +14,8 @@ def create_app(config_name):
 
     @app.route('/')
     def index():
-        return render_template('index.html')
+        routes_list = app.url_map.iter_rules()
+        return render_template('index.html', routes_list=routes_list)
 
     @app.route('/settings')
     def settings():
