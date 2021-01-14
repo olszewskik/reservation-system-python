@@ -1,7 +1,10 @@
-{% extends 'bootstrap/base.html' %} {% block title %}ReservationSystem{%endblock
-%} {% block content %}
-<h1>Reservation System</h1>
-<ul>
-  {% for route in routes_list %}{{ route }}{% endfor %}
-</ul>
-{% endblock %}
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Reservation System Main Page{% endblock  %}
+
+{% block page_content %}
+  <div class="page-header">
+    <h1>Welcome to Reservation System</h1>
+  </div>
+  {{ wtf.quick_form(form) }}
+{% endblock  %}
