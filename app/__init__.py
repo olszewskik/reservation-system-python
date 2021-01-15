@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
 from config import config
 
 from flask_wtf import FlaskForm
@@ -7,6 +8,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 bootstrap = Bootstrap()
+db = SQLAlchemy()
 
 
 def create_app(config_name):
@@ -15,6 +17,7 @@ def create_app(config_name):
     config[config_name].init_app(app)
 
     bootstrap.init_app(app)
+    db.init_app(app)
 
     class NameForm(FlaskForm):
         name = StringField('What is your name?', validators=[DataRequired()])
