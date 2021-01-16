@@ -15,7 +15,7 @@ class DevelopmentConfig(Config):
     DEBUG = True
     # SQLALCHEMY_DATABASE_URI = os.environ.get(
     #     'DEV_DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
-    SQLALCHEMY_DATABASE_URI = 'mysql://root@localhost/rsdev'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:password@localhost/rsdev'
 
 
 class TestingConfig(Config):
