@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, BooleanField, ValidationError
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo
+
 from ..models import User
 
 
@@ -16,7 +17,8 @@ class RegistrationForm(FlaskForm):
     username = StringField('User name', validators=[
         DataRequired(),
         Length(1, 64),
-        Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0, 'Username can only consist of letters, numbers, periods, and underscores')])
+        Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
+               'Username can only consist of letters, numbers, periods, and underscores')])
     password = PasswordField('Password', validators=[
         DataRequired(),
         EqualTo('password2', message='The passwords must be identical')])

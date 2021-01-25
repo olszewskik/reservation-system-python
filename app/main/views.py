@@ -1,4 +1,5 @@
-from flask import render_template, current_app
+from flask import render_template
+
 from . import main
 from .forms import NameForm
 
