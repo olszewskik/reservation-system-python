@@ -13,7 +13,14 @@ def before_request():
             and not current_user.confirmed \
             and request.blueprint != 'auth' \
             and request.endpoint != 'static':
-        return '<h1>Access denied</h1>'
+        return redirect(url_for('auth.unconfirmed'))
+
+
+@auth.route('/unconfirmed')
+def unconfirmed():
+    if current_user.is_anonymous or current_user.confirmed:
+        return redirect(url_for('main.index'))
+    return render_template('auth/unconfirmed.html')
 
 
 @auth.route('/login', methods=['GET', 'POST'])
