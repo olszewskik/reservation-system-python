@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import current_app
 from flask_login import UserMixin
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
@@ -59,3 +61,15 @@ class User(UserMixin, db.Model):
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+
+class Devices(db.Model):
+    __tabelname__ = 'devices'
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(50))
+    is_active = db.Column(db.Boolean, default=True)
+    comments = db.Column(db.String(250))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
+    def __repr__(self):
+        return '<Devices %r>' % self.name
